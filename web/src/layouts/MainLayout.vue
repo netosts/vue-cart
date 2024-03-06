@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lhh LpR lFf">
-    <q-header reveal bordered class="bg-primary text-white tw-py-2" height-hint="98">
-      <q-toolbar>
+    <q-header reveal bordered class="bg-dark text-white" height-hint="98">
+      <q-toolbar class="tw-py-4">
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
@@ -11,24 +11,25 @@
           {{ productName ?? 'Vue Cart' }}
         </q-toolbar-title>
 
-        <q-tabs align="left" class="tw-mx-10">
-          <q-route-tab to="/" label="Home" />
-          <q-route-tab to="/" label="Home" />
-        </q-tabs>
+
 
         <div class="row">
-          <div class="col tw-flex tw-gap-4">
+          <div class="col tw-flex tw-gap-4 tw-mx-6">
             <a v-for="social, socialId in socialItems" :key="socialId" :href="social.href ?? undefined" target="_blank"
-            rel="noopener">
-              <q-avatar >
-            <img :src="social.src" :alt="social.alt">
-          </q-avatar>
+              rel="noopener">
+              <q-avatar>
+                <img :src="social.src" :alt="social.alt">
+              </q-avatar>
             </a>
-
           </div>
         </div>
       </q-toolbar>
 
+      <q-separator color="white" />
+
+      <q-tabs align="left" class="tw-mx-10 tw-pt-1">
+        <q-route-tab to="/" label="Home" />
+      </q-tabs>
 
     </q-header>
 
@@ -36,14 +37,7 @@
       <!-- drawer content -->
 
       <div class="q-mini-drawer-hide absolute" style="top: 15px; right: -17px">
-        <q-btn
-          dense
-          round
-          unelevated
-          color="accent"
-          icon="chevron_left"
-          @click="leftDrawerOpen = false"
-        />
+        <q-btn dense round unelevated color="accent" icon="chevron_left" @click="leftDrawerOpen = false" />
       </div>
     </q-drawer>
 
@@ -55,7 +49,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import {productName} from '../../package.json';
+import { productName } from '../../package.json';
 
 const leftDrawerOpen = ref(false);
 
@@ -72,12 +66,14 @@ const socialItems: ISocialItems[] = [
     href: 'https://github.com/netosts/vue-cart',
   },
   {
-    src: '/images/linkedin-logo.png',
-    alt: 'linkedin-logo.png',
+    src: '/images/linkedin-logo.webp',
+    alt: 'linkedin-logo.webp',
+    href: 'https://www.linkedin.com/in/silvio-dos-santos-neto-24a910259/',
   },
   {
     src: '/images/neto-logo.png',
     alt: 'neto-logo.png',
+    href: 'https://netosts.com/',
   },
 ]
 
