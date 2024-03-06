@@ -1,4 +1,4 @@
-# 🚀 Challenge Vue3: Build a E-commerce Website
+# 🚀 Challenge Vue3: Build a E-commerce PWA
 
 <!-- tocstop -->
 
@@ -26,7 +26,7 @@ Done! You can now access: [http://localhost:8080](http://localhost:8080)
 
 ## Challenge Overview
 
-Your mission is to build a fully functional e-commerce website using Vue.js 3, Quasar and Pinia for the frontend and json-server for the backend. The website should enable users to browse products, add them to a shopping cart, proceed to checkout, and complete purchases.
+Your mission is to build a fully functional e-commerce Progressive Web App (PWA) using Vue.js 3, Quasar and Pinia for the frontend and json-server for the backend. The website should enable users to browse products, add them to a shopping cart, proceed to checkout, and complete purchases.
 
 ## Key Functionalities
 
