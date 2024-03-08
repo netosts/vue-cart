@@ -6,7 +6,7 @@
 
         <q-toolbar-title>
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
+            <img src="/images/vue-cart-logo.png" />
           </q-avatar>
           {{ productName ?? 'Vue Cart' }}
         </q-toolbar-title>
@@ -17,7 +17,7 @@
           <div class="col tw-flex tw-gap-4 tw-mx-6">
             <a v-for="social, socialId in socialItems" :key="socialId" :href="social.href ?? undefined" target="_blank"
               rel="noopener">
-              <q-avatar>
+              <q-avatar class="social-items">
                 <img :src="social.src" :alt="social.alt">
               </q-avatar>
             </a>
@@ -28,7 +28,8 @@
       <q-separator color="white" />
 
       <q-tabs align="left" class="tw-mx-10 tw-pt-1">
-        <q-route-tab to="/" label="Home" />
+        <q-route-tab :to="{ name: 'home' }" label="Home" />
+        <q-route-tab :to="{ name: 'shop.electronics' }" label="Shop" />
       </q-tabs>
 
     </q-header>
@@ -36,7 +37,7 @@
     <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
       <!-- drawer content -->
 
-      <div class="q-mini-drawer-hide absolute" style="top: 15px; right: -17px">
+      <div class="absolute" style="top: 15px; right: -17px" v-if="leftDrawerOpen">
         <q-btn dense round unelevated color="accent" icon="chevron_left" @click="leftDrawerOpen = false" />
       </div>
     </q-drawer>
@@ -66,8 +67,8 @@ const socialItems: ISocialItems[] = [
     href: 'https://github.com/netosts/vue-cart',
   },
   {
-    src: '/images/linkedin-logo.webp',
-    alt: 'linkedin-logo.webp',
+    src: '/images/linkedin-logo.png',
+    alt: 'linkedin-logo.png',
     href: 'https://www.linkedin.com/in/silvio-dos-santos-neto-24a910259/',
   },
   {
@@ -81,3 +82,19 @@ const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 };
 </script>
+
+<style lang="scss" scoped>
+@import '../css/quasar.variables.scss';
+
+.social-items {
+  img {
+    transition: 0.25s;
+  }
+}
+
+.social-items:hover {
+  img {
+    background-color: $accent;
+  }
+}
+</style>
