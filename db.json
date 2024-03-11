@@ -1,16 +1,93 @@
 {
+  "stock": [
+    {
+      "product_id": 1,
+      "amount": 10
+    },
+    {
+      "product_id": 2,
+      "amount": 5
+    },
+    {
+      "product_id": 3,
+      "amount": 7
+    },
+    {
+      "product_id": 4,
+      "amount": 3
+    },
+    {
+      "product_id": 5,
+      "amount": 8
+    },
+    {
+      "product_id": 6,
+      "amount": 2
+    },
+    {
+      "product_id": 7,
+      "amount": 10
+    },
+    {
+      "product_id": 8,
+      "amount": 9
+    },
+    {
+      "product_id": 9,
+      "amount": 7
+    },
+    {
+      "product_id": 10,
+      "amount": 6
+    },
+    {
+      "product_id": 11,
+      "amount": 9
+    },
+    {
+      "product_id": 12,
+      "amount": 8
+    },
+    {
+      "product_id": 13,
+      "amount": 4
+    },
+    {
+      "product_id": 14,
+      "amount": 6
+    },
+    {
+      "product_id": 15,
+      "amount": 4
+    },
+    {
+      "product_id": 16,
+      "amount": 5
+    },
+    {
+      "product_id": 17,
+      "amount": 2
+    },
+    {
+      "product_id": 18,
+      "amount": 3
+    }
+  ],
   "categories": [
     {
       "id": 1,
-      "name": "Electronics"
+      "name": "Electronics",
+      "slug": "electronics"
     },
     {
       "id": 2,
-      "name": "Clothing"
+      "name": "Clothing",
+      "slug": "clothing"
     },
     {
       "id": 3,
-      "name": "Home & Kitchen"
+      "name": "Home & Kitchen",
+      "slug": "home-&-kitchen"
     }
   ],
   "products": [
