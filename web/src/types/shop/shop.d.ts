@@ -1,8 +1,14 @@
 export interface IProduct {
-  id?: number | null;
-  category_id?: number | null;
-  name: string | null,
-  description?: string | null,
-  price: number | null,
-  image?: string | null,
+  id: number;
+  category_id: number;
+  name: string,
+  description: string,
+  price: number,
+  image: string,
+}
+
+export interface ICategories {
+  id: number;
+  name: string,
+  slug: string
 }

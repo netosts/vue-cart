@@ -5,33 +5,22 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="/images/vue-cart-logo.png" />
-          </q-avatar>
-          {{ productName ?? 'Vue Cart' }}
+          <RouterLink to="/">
+            <q-avatar>
+              <img src="/images/vue-cart-logo.png" />
+            </q-avatar>
+            {{ productName ?? 'Vue Cart' }}
+          </RouterLink>
         </q-toolbar-title>
 
-
-
-        <div class="row">
-          <div class="col tw-flex tw-gap-4 tw-mx-6">
-            <a v-for="social, socialId in socialItems" :key="socialId" :href="social.href ?? undefined" target="_blank"
-              rel="noopener">
-              <q-avatar class="social-items">
-                <img :src="social.src" :alt="social.alt">
-              </q-avatar>
-            </a>
-          </div>
-        </div>
+        <RouterLink :to="{ name: 'cart' }" class="tw-relative">
+          <q-icon name="shopping_cart" size="lg" class="tw-mr-8" />
+          <q-icon name="radio_button_unchecked" size="md" class="tw-absolute tw-left-6 -tw-bottom-2" />
+          <span class="tw-absolute tw-font-bold tw-text-accent -tw-bottom-0.5"
+            :class="{ 'tw-left-9': decimalShopCart === 1, 'tw-left-8': decimalShopCart === 2, 'tw-left-7': decimalShopCart === 3 }">{{
+          countShopCart }}</span>
+        </RouterLink>
       </q-toolbar>
-
-      <q-separator color="white" />
-
-      <q-tabs align="left" class="tw-mx-10 tw-pt-1">
-        <q-route-tab :to="{ name: 'home' }" label="Home" />
-        <q-route-tab :to="{ name: 'shop.electronics' }" label="Shop" />
-      </q-tabs>
-
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
@@ -45,14 +34,35 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <footer class="tw-bg-dark-light tw-w-full text-white tw-h-32 tw-flex tw-justify-center tw-items-center">
+      <div class="row">
+        <div class="col-12 tw-flex tw-gap-6 tw-justify-center">
+          <a v-for="social, socialId in socialItems" :key="socialId" :href="social.href ?? undefined" target="_blank"
+            rel="noopener">
+            <q-avatar size="40px" class="social-items">
+              <img :src="social.src" :alt="social.alt">
+            </q-avatar>
+          </a>
+        </div>
+        <div class="col-12 tw-text-center tw-mt-6">
+          <span class="tw-mr-1 tw-text-gray-300">made by</span> <a href="https://netosts.com/" target="_blank"
+            rel="noopener">Neto Santos</a>
+        </div>
+      </div>
+    </footer>
   </q-layout>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { productName } from '../../package.json';
+import { useShopStore } from 'src/stores/shop.store';
 
 const leftDrawerOpen = ref(false);
+const shopStore = useShopStore();
+const countShopCart = computed(() => Object.values(shopStore.cart).length);
+const decimalShopCart = computed(() => countShopCart.value.toString().length);
 
 export interface ISocialItems {
   src: string;
@@ -70,11 +80,6 @@ const socialItems: ISocialItems[] = [
     src: '/images/linkedin-logo.png',
     alt: 'linkedin-logo.png',
     href: 'https://www.linkedin.com/in/silvio-dos-santos-neto-24a910259/',
-  },
-  {
-    src: '/images/neto-logo.png',
-    alt: 'neto-logo.png',
-    href: 'https://netosts.com/',
   },
 ]
 

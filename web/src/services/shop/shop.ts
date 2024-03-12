@@ -1,15 +1,11 @@
 import { api } from 'src/boot/axios';
 
 export class ShopService {
-  public static allElectronics() {
-    return api.get('/products?category_id=1')
+  public static getProducts(id: number) {
+    return api.get(`/products?category_id=${id}`);
   }
 
-  public static allClothings() {
-    return api.get('/products?category_id=2')
-  }
-
-  public static allHousewares() {
-    return api.get('/products?category_id=3')
+  public static allCategories() {
+    return api.get('/categories')
   }
 }
