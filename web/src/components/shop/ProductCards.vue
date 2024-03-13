@@ -13,7 +13,8 @@
         </q-card-section>
         <q-card-actions class="tw-flex tw-justify-between">
           <div class="text-h6 q-mb-xs q-pl-sm">${{ item.price ?? 'N/A' }}</div>
-          <q-btn flat icon="shopping_cart" color="accent" label="Add to cart" @click="onAddToCart(item)" />
+          <q-btn flat icon="shopping_cart" :loading="isAddLoading" color="accent" label="Add to cart"
+            @click="onAddToCart(item)" />
         </q-card-actions>
       </q-card>
     </div>
@@ -26,6 +27,8 @@ import { IProduct } from 'src/types/shop/shop';
 interface Props {
   items: IProduct[]
 }
+
+const isAddLoading = defineModel('isAddLoading', { required: true, default: false, type: Boolean });
 
 const props = defineProps<Props>();
 const emit = defineEmits<{

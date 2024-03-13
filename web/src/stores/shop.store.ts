@@ -31,6 +31,11 @@ export const useShopStore = defineStore('shop', {
       })
 
       return res;
-    }
+    },
+
+    getProductStock(id: number) {
+      const res = ShopService.getProductStock(id);
+      return res;
+    },
   }
 });

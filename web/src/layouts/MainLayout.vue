@@ -61,7 +61,7 @@ import { useShopStore } from 'src/stores/shop.store';
 
 const leftDrawerOpen = ref(false);
 const shopStore = useShopStore();
-const countShopCart = computed(() => Object.values(shopStore.cart).length);
+const countShopCart = computed(() => Object.values(shopStore.cart).flat().length);
 const decimalShopCart = computed(() => countShopCart.value.toString().length);
 
 export interface ISocialItems {

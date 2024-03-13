@@ -8,4 +8,8 @@ export class ShopService {
   public static allCategories() {
     return api.get('/categories')
   }
+
+  public static getProductStock(id: number) {
+    return api.get(`/stock/${id}`)
+  }
 }
