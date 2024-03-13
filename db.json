@@ -145,7 +145,7 @@
       "name": "Men's T-Shirt",
       "description": "Comfortable cotton t-shirt available in various colors.",
       "price": 19.99,
-      "image": "mens-t-shirt.jpg"
+      "image": "https://i.postimg.cc/21jGqZs6/t-shirt.jpg"
     },
     {
       "id": 8,
@@ -153,7 +153,7 @@
       "name": "Women's Blouse",
       "description": "Stylish blouse for casual or formal occasions.",
       "price": 29.99,
-      "image": "womens-blouse.jpg"
+      "image": "https://i.postimg.cc/bZtnw0gk/blouse.jpg"
     },
     {
       "id": 9,
@@ -161,7 +161,7 @@
       "name": "Men's Jeans",
       "description": "Classic denim jeans for everyday wear.",
       "price": 49.99,
-      "image": "mens-jeans.jpg"
+      "image": "https://i.postimg.cc/gnWNW543/jeans.jpg"
     },
     {
       "id": 10,
@@ -169,7 +169,7 @@
       "name": "Women's Dress",
       "description": "Elegant dress for special occasions.",
       "price": 79.99,
-      "image": "womens-dress.jpg"
+      "image": "https://i.postimg.cc/dLXdFN2J/dress.jpg"
     },
     {
       "id": 11,
@@ -177,7 +177,7 @@
       "name": "Men's Hoodie",
       "description": "Warm and cozy hoodie for chilly days.",
       "price": 39.99,
-      "image": "mens-hoodie.jpg"
+      "image": "https://i.postimg.cc/8J1f42Sm/hoodie.png"
     },
     {
       "id": 12,
@@ -185,7 +185,7 @@
       "name": "Women's Skirt",
       "description": "Versatile skirt for creating stylish looks.",
       "price": 34.99,
-      "image": "womens-skirt.jpg"
+      "image": "https://i.postimg.cc/7JyMqG1q/skirt.jpg"
     },
     {
       "id": 13,
@@ -193,7 +193,7 @@
       "name": "Coffee Maker",
       "description": "Modern coffee maker for brewing delicious coffee.",
       "price": 79.99,
-      "image": "coffee-maker.jpg"
+      "image": "https://i.postimg.cc/94bBtt7K/coffee-maker.webp"
     },
     {
       "id": 14,
@@ -201,7 +201,7 @@
       "name": "Toaster",
       "description": "Stylish toaster for perfectly toasted bread slices.",
       "price": 39.99,
-      "image": "toaster.jpg"
+      "image": "https://i.postimg.cc/gX0HMXyJ/toaster.jpg"
     },
     {
       "id": 15,
@@ -209,7 +209,7 @@
       "name": "Blender",
       "description": "Powerful blender for making smoothies and shakes.",
       "price": 49.99,
-      "image": "blender.jpg"
+      "image": "https://i.postimg.cc/p9RZF1pK/blender.jpg"
     },
     {
       "id": 16,
@@ -217,7 +217,7 @@
       "name": "Electric Kettle",
       "description": "Fast-boiling electric kettle for hot beverages.",
       "price": 29.99,
-      "image": "electric-kettle.jpg"
+      "image": "https://i.postimg.cc/SnWdjpNy/electric-kettle.jpg"
     },
     {
       "id": 17,
@@ -225,7 +225,7 @@
       "name": "Cookware Set",
       "description": "Complete cookware set for versatile cooking.",
       "price": 149.99,
-      "image": "cookware-set.jpg"
+      "image": "https://i.postimg.cc/k2rwn5C1/cookware-set.jpg"
     },
     {
       "id": 18,
@@ -233,7 +233,7 @@
       "name": "Dining Set",
       "description": "Elegant dining set for stylish dining experiences.",
       "price": 99.99,
-      "image": "dining-set.jpg"
+      "image": "https://i.postimg.cc/HjswHyys/dining-set.jpg"
     }
   ]
 }
