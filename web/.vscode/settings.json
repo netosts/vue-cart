@@ -17,7 +17,9 @@
     "github",
     "houseware",
     "linkedin",
-    "pinia"
+    "pinia",
+    "Swal",
+    "sweetalert"
   ],
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
