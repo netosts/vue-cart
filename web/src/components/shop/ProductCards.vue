@@ -12,7 +12,7 @@
           </div>
         </q-card-section>
         <q-card-actions class="tw-flex tw-justify-between">
-          <div class="text-h6 q-mb-xs q-pl-sm">${{ item.price ?? 'N/A' }}</div>
+          <div class="text-h6 q-mb-xs q-pl-sm">{{ useCurrencyToUS(item.price) }}</div>
           <q-btn flat icon="shopping_cart" :loading="isAddLoading" color="accent" label="Add to cart"
             @click="onAddToCart(item)" />
         </q-card-actions>
@@ -22,6 +22,7 @@
 </template>
 
 <script setup lang="ts">
+import { useCurrencyToUS } from 'src/composable/useCurrency';
 import { IProduct } from 'src/types/shop/shop';
 
 interface Props {

@@ -39,7 +39,7 @@
 
         </q-card-section>
         <q-card-section>
-          <div class="tw-text-accent tw-text-lg tw-font-bold">${{ cartValue[0].price }}</div>
+          <div class="tw-text-accent tw-text-lg tw-font-bold">{{ useCurrencyToUS(cartValue[0].price) }}</div>
         </q-card-section>
 
       </q-card-section>
@@ -51,6 +51,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { useCart } from 'src/composable/useCart';
+import { useCurrencyToUS } from 'src/composable/useCurrency';
 import { useShopStore } from 'src/stores/shop.store';
 import { IProduct } from 'src/types/shop/shop';
 
