@@ -6,12 +6,10 @@
 
     <div class="row tw-flex tw-w-full tw-justify-center tw-items-center tw-py-4">
       <q-card v-for="cartValue, cartKey in cart" :key="cartKey" class="col-12 tw-px-[10%]" flat bordered>
-        <q-card-section class="tw-flex tw-gap-6"
-          :class="{ 'tw-justify-between': $q.screen.gt.sm, 'tw-flex-col': $q.screen.lt.sm }">
-          <q-card-section>
+        <q-card-section class="tw-flex tw-gap-6 tw-justify-between"
+          :class="{  'tw-flex-col': $q.screen.lt.sm }">
+          <q-card-section class="tw-flex tw-gap-6" :class="{'tw-flex-col': $q.screen.lt.sm}">
             <q-img fit="contain" class="tw-w-[200px] tw-h-[150px] tw-flex tw-mt-2" :src="cartValue[0].image" />
-          </q-card-section>
-          <q-card-section class="tw-flex">
             <div class="tw-flex tw-flex-col tw-justify-between">
               <div class="tw-flex tw-flex-col">
                 <span class="tw-text-xl tw-font-medium">{{ cartValue[0].name }}</span>
