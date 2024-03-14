@@ -1,0 +1,25 @@
+version: "3.2"
+services:
+  server:
+    restart: unless-stopped
+    image: clue/json-server
+    ports:
+      - "3000:80"
+    volumes:
+      - ./db.json:/data/db.json
+    networks:
+      - app-network
+
+  web:
+    restart: unless-stopped
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
