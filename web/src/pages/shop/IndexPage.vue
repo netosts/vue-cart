@@ -4,7 +4,7 @@
 
     <div class="row q-pt-md">
       <div class="col-12 tw-flex tw-gap-4 tw-justify-between tw-flex-wrap  tw-items-end">
-        <h1 class="text-h3 tw-font-medium tw-flex-1 tw-text-nowrap">
+        <h1 class="text-h3 tw-font-medium tw-flex-1 tw-text-nowrap" :class="{'text-h3' : $q.screen.gt.sm, 'text-h4' : $q.screen.lt.sm}">
           Discover Product
         </h1>
         <div class="tw-flex tw-gap-6 tw-flex-wrap">
