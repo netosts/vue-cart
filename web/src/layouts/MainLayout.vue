@@ -25,6 +25,32 @@
 
     <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
       <!-- drawer content -->
+      <div class="q-pa-md q-gutter-md">
+    <q-list padding class="rounded-borders" style="max-width: 350px">
+      <q-item-label header>Menu</q-item-label>
+
+      <q-item clickable v-ripple :to="{name: 'home'}" active-class="menu-active">
+        <q-item-section avatar top>
+          <q-avatar icon="home" size="50px" />
+        </q-item-section>
+
+        <q-item-section>
+          <q-item-label lines="1">Home</q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-item clickable v-ripple :to="{name: 'shop', params: {id: 1, slug: 'electronics'}}" active-class="menu-active">
+        <q-item-section avatar top>
+          <q-avatar icon="shopping_cart" size="50px" />
+        </q-item-section>
+
+        <q-item-section>
+          <q-item-label lines="1">Shop</q-item-label>
+        </q-item-section>
+      </q-item>
+
+    </q-list>
+  </div>
 
       <div class="absolute" style="top: 15px; right: -17px" v-if="leftDrawerOpen">
         <q-btn dense round unelevated color="accent" icon="chevron_left" @click="leftDrawerOpen = false" />
@@ -101,5 +127,10 @@ const toggleLeftDrawer = () => {
   img {
     background-color: $accent;
   }
+}
+
+.menu-active {
+  background-color: $accent-light;
+  color: $accent;
 }
 </style>
