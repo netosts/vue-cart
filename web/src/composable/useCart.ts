@@ -9,11 +9,14 @@ export const useCart = () => {
 
   const addToCart = (product: IProduct) => {
     if (cart.value[product.id]) {
-      if (cart.value[product.id].length === cart.value[product.id][0].amount) {
+      const cartAmount = Number(cart.value[product.id].cart_amount)
+      const stockAmount = Number(cart.value[product.id].stock_amount)
+
+      if (cartAmount >= stockAmount) {
         return Promise.reject(`There is no more ${product.name} in stock`);
       }
-      cart.value[product.id] = cart.value[product.id]
-        .concat([cart.value[product.id][0]])
+
+      cart.value[product.id].cart_amount = cartAmount + 1;
       return Promise.resolve(`${product.name} added to cart`);
     }
 
@@ -22,21 +25,26 @@ export const useCart = () => {
     res.then(({ data: data }) => {
       const productWithAmount = {
         ...product,
-        amount: data.amount
+        stock_amount: data.amount,
+        cart_amount: 1,
       }
 
-      cart.value[product.id] = [productWithAmount]
+      cart.value[product.id] = productWithAmount
     })
-
     return Promise.resolve(`${product.name} added to cart`);
   }
 
-  const removeFromCart = (product: IProduct) => {
-    cart.value[product.id].pop();
+  const removeFromCart = (product: IProduct): void => {
+    if (!cart.value[product.id] || !cart.value[product.id].cart_amount) return;
 
-    if (cart.value[product.id].length === 0) {
+    const cartAmount = Number(cart.value[product.id].cart_amount)
+
+    if (cartAmount < 1) {
       delete cart.value[product.id];
+      return;
     }
+
+    cart.value[product.id].cart_amount = cartAmount - 1;
   }
 
   const deleteFromCart = (product: IProduct) => {
