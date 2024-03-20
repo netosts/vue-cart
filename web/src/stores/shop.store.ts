@@ -4,7 +4,7 @@ import { ICategories, IProduct } from 'src/types/shop/shop';
 
 export const useShopStore = defineStore('shop', {
   state: () => ({
-    cart: {} as { [key: number]: IProduct[] },
+    cart: {} as { [key: number]: IProduct },
     products: [] as IProduct[],
     categories: [] as ICategories[],
   }),

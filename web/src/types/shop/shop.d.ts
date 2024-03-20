@@ -5,7 +5,8 @@ export interface IProduct {
   description: string,
   price: number,
   image: string,
-  amount?: number,
+  cart_amount?: number,
+  stock_amount?: number,
 }
 
 export interface ICategories {
