@@ -59,6 +59,8 @@
 
     <q-page-container>
       <router-view />
+
+      <PageScroller />
     </q-page-container>
 
     <footer class="tw-bg-dark-light tw-w-full text-white tw-h-32 tw-flex tw-justify-center tw-items-center">
@@ -85,6 +87,7 @@ import { computed, ref } from 'vue';
 import { productName } from '../../package.json';
 import { useShopStore } from 'src/stores/shop.store';
 import { useRoute } from 'vue-router';
+import PageScroller from 'src/components/PageScroller.vue';
 
 const leftDrawerOpen = ref(false);
 const shopStore = useShopStore();
