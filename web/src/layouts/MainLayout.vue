@@ -39,7 +39,7 @@
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple :to="{name: 'shop', params: {id: 1, slug: 'electronics'}}" active-class="menu-active">
+      <q-item clickable v-ripple :to="shopRoute()" active-class="menu-active">
         <q-item-section avatar top>
           <q-avatar icon="shopping_cart" size="50px" />
         </q-item-section>
@@ -84,11 +84,22 @@
 import { computed, ref } from 'vue';
 import { productName } from '../../package.json';
 import { useShopStore } from 'src/stores/shop.store';
+import { useRoute } from 'vue-router';
 
 const leftDrawerOpen = ref(false);
 const shopStore = useShopStore();
 const countShopCart = computed(() => Object.values(shopStore.cart).flat().length);
 const decimalShopCart = computed(() => countShopCart.value.toString().length);
+
+const route = useRoute();
+
+const shopRoute = () => {
+  if (!route.params.id) {
+    return {name: 'shop', params: {id: 1, slug: 'electronics'}}
+  }
+
+  return {name: 'shop', params: {id: route.params.id, slug: route.params.slug}}
+}
 
 export interface ISocialItems {
   src: string;
